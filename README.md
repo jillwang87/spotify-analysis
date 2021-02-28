@@ -12,5 +12,6 @@ Note:
   1. `auth_info.json` is a template, please obtain your own Client ID and Client Secret from Spotify for Developers at https://developer.spotify.com/dashboard/, and then
   overwrite the strings in fields `client_id` and `client_secret`.
   Then select 'Edit Settings' in the same dashboard and whitelist (add) http://localhost:7777/callback in the redirect URIs.
-  2. `input` directory is currently empty, please download your personal data from Spotify from your account dashboard at https://www.spotify.com/ in the privacy settings.
-    This process might take a while, mine took about 5 days. After you get your personal data, copy the `StreamingHistory*.json` file(s) into the input folder. 
+  2. Please download your personal data from Spotify from your account dashboard at https://www.spotify.com/ in the privacy settings.
+    This process might take a while, mine took about 5 days. After you get your personal data, make a directory `input` and copy the `StreamingHistory*.json` file(s) into the `input` directory. 
+  3. Make a  `output` directory for storing json files created by the `create_data.py` python script.
