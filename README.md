@@ -3,8 +3,7 @@ Use the spotify streaming history I obtained from Spotify to analyze my listenin
  
 How the python script `create_data.py` works:
   1. Extract all the streaming history json files in the input directory.
-  2. Since the streaming history comes without track IDs, the unique track IDs for all the tracks are retrieved by the search API. 
-  The result is dumped to `streaming_history_with_track_id.json`.
+  2. Since the streaming history comes without track IDs, the unique track IDs for all the tracks are retrieved by the search API.
   3. Retrieve the tracks features by the track API with the track IDs obtained from the last step.
   The result is dumped to `streaming_history_with_track_id_and_features.json`
   
