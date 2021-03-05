@@ -16,4 +16,4 @@ Note:
   3. Running the `create_data.py` script on your streaming history will replace all the files currently in the `data\output` directory.
 
 Upcoming changes list:  
-  - `create_data.py` will search more efficeintly by avoiding searching info on duplicate songs
+  - `create_data.py` will search more efficeintly by avoiding searching info on duplicated tracks
