@@ -78,7 +78,7 @@ Args:
 Returns:
     dict: returns a dictionary containing features of a track
     features are 'danceability','energy','key','loudness','mode','speechiness','acousticness',
-    'instrumentalness','liveness','valence','tempo','id','duration_ms','time_signature',
+    'instrumentalness','liveness','valence','tempo','duration_ms','time_signature',
     'popularity'
 """
 
