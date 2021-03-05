@@ -14,3 +14,6 @@ Note:
   2. Please download your personal data from Spotify from your account dashboard at https://www.spotify.com/ in the privacy settings.
     This process might take a while, mine took about 5 days. After you get your personal data, replace all the files in the `data\input` directory and copy YOUR the `StreamingHistory*.json` file(s) into the `data\input` directory. 
   3. Running the `create_data.py` script on your streaming history will replace all the files currently in the `data\output` directory.
+
+Upcoming changes list:  
+  - `create_data.py` will search more efficeintly by avoiding searching info on duplicate songs
