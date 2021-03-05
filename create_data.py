@@ -4,6 +4,7 @@ import spotipy
 import json
 from os import listdir
 from tqdm import tqdm
+from inflection import underscore
 
 
 # GET ACCESS TOKEN
@@ -66,10 +67,6 @@ data.insert(0, "trackId", data["trackName"]+'+'+data["artistName"])
 tqdm.pandas()
 data["trackId"] = data["trackId"].progress_apply(get_track_id)
 
-# WRITE TO FILE 'streaming_history_with_track_id.json'
-data.to_json(r'data/output/streaming_history_with_track_id.json')
-
-
 """Get the track features given the track ID.
 
 Args:
@@ -107,9 +104,6 @@ def get_track_features(track_id: str):
         except:
             None
 
-with open('data/output/streaming_history_with_track_id.json', encoding='UTF-8') as f:
-        data = pd.read_json(f)
-
 # INITIALIZE FEATURE COLUMNS
 features = [
     'danceability',
@@ -137,6 +131,9 @@ for i in tqdm(range(n)):
         data.iloc[i, 5:] = get_track_features(track_id)
     else: 
         print("Track "+ i + "with ID "+track_id+" features cannot be obtained.")
+
+# MAKE ALL COLUMN NAME SNAKE_CASE
+data.columns = list(map(underscore, list(data.columns)))
 
 # WRITE TO FILE 'streaming_history_with_track_id_and_features.json'
 data.to_json(r'data/output/streaming_history_with_track_id_and_features.json')
